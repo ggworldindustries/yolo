@@ -11,24 +11,24 @@ version: "3.8"
 services:
 
   #Builds the frontend Docker image and creates the frontend microservice
-  brian-yolo-client:
-    image: brianbwire/brian-yolo-client:v1.0.0
+  gideon-yolo-client:
+    image: gideongachie/gideon-yolo-client:v1.0.0
     build: ./client
-    container_name: brian-yolo-client
+    container_name: gideongachie-yolo-client
     stdin_open: true
     tty: true
     ports:
       - "3000:3000"
     depends_on: 
-      - brian-yolo-backend
+      - gideon-yolo-backend
     networks:
       - app-net
 
   #Builds the backend Docker image and creates the backend microservice
-  brian-yolo-backend:
-    image: brianbwire/brian-yolo-backend:v1.0.0
+  gideon-yolo-backend:
+    image: gideongachie/gideon-yolo-backend:v1.0.0
     build: ./backend
-    container_name: brian-yolo-backend
+    container_name: gideongachie-yolo-backend
     stdin_open: true
     tty: true
     restart: always
@@ -38,19 +38,21 @@ services:
       - app-ip-mongo
     networks:
       - app-net
+    environment:
+      - mangodb-atlas="mongodb+srv://gideongachie:33813398@gallery.nn9xf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
   #Creates the database microservice
-  app-ip-mongo:
-    image: mongo
-    container_name: app-mongo
-    ports:
-      - "27017:27017"
-    networks:
-      - app-net
-    volumes:
-      - type: volume
-        source: app-mongo-data
-        target: /data/db
+  # app-ip-mongo:
+  #   image: mongo
+  #   container_name: app-mongo
+  #   ports:
+  #     - "27017:27017"
+  #   networks:
+  #     - app-net
+  #   volumes:
+  #     - type: volume
+  #       source: app-mongo-data
+  #       target: /data/db
 
 #Creates the network infrastructure necessary for the containers to communicate with each other
 networks:
