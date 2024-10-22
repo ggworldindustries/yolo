@@ -20,7 +20,7 @@ services:
     ports:
       - "3000:3000"
     depends_on: 
-      - gideon-yolo-backend
+      - gideongachie-yolo-backend
     networks:
       - app-net
 
