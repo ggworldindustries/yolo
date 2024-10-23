@@ -11,24 +11,24 @@ version: "3.8"
 services:
 
   #Builds the frontend Docker image and creates the frontend microservice
-  gideon-yolo-client:
-    image: gideongachie/gideon-yolo-client:v1.0.0
+  gideongachie_yolo_client:
+    image: gideongachie/yolo_client:v1.0.0
     build: ./client
-    container_name: gideongachie-yolo-client
+    container_name: gideongachie_yolo_client
     stdin_open: true
     tty: true
     ports:
       - "3000:3000"
     depends_on: 
-      - gideongachie-yolo-backend
+      - gideongachie_yolo_backend
     networks:
       - app-net
 
   #Builds the backend Docker image and creates the backend microservice
-  gideon-yolo-backend:
-    image: gideongachie/gideon-yolo-backend:v1.0.0
+  gideongachie_yolo_backend:
+    image: gideongachie/yolo_backend:v1.0.0
     build: ./backend
-    container_name: gideongachie-yolo-backend
+    container_name: gideongachie_yolo_backend
     stdin_open: true
     tty: true
     restart: always
