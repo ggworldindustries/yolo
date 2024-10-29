@@ -1,0 +1,2 @@
+container_name: gideon-yolo-client
+network: app-net

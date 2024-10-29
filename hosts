@@ -1,0 +1,6 @@
+[webservers]
+vm1 ansible_host=127.0.0.1 
+vm1 ansible_host=127.0.0.1 
+
+[dbservers]
+vm3 ansible_host=127.0.0.1

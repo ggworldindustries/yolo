@@ -1,0 +1,17 @@
+---
+- name: Pull image from repository
+  docker_image:
+    name: gideongachie/gideon-client:v1.0.0
+    source: pull
+
+- name: Create Node.js Frontend Container
+  docker_container:
+    name: gideon-client:v1.0.0
+    image: gideongachie/gideon-client:v1.0.0
+    networks:
+      - name: app-net
+    ports:
+      - "3000:3000"
+    command: "npm start"
+  become: yes
+  
