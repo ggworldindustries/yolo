@@ -127,9 +127,60 @@ The Docker Compose file includes volume definitions for MongoDB data storage. Th
 
 ```yaml
 volumes:
-  mongodata:  mongodata
-    driver: local
+  mongodata:  # Define Docker volume for MongoDB data
+  driver: local
 ```
 
 This volume, `mongodata`, is designated for storing MongoDB data. It ensures that the data remains intact and is not lost even if the container is stopped or deleted.
 
+## 5. Git Workflow to achieve the task
+
+To achieve the task, the following git workflow was used:
+
+1. Fork the repository from the original repository.
+2. Clone the repo: `git@github.com:Maubinyaachi/yolo-Microservice.git`
+3. Create a `.gitignore` file to exclude unnecessary files and directories from version control.
+4. Add Dockerfile for the client to the repo:
+   `git add client/Dockerfile`
+5. Add Dockerfile for the backend to the repo:
+   `git add backend/Dockerfile`
+6. Commit the changes:
+   `git commit -m "Added Dockerfiles"`
+7. Add docker-compose file to the repo:
+   `git add docker-compose.yml`
+8. Commit the changes:
+   `git commit -m "Added docker-compose file"`
+9. Push the files to GitHub:
+   `git push`
+10. Build the client and backend images:
+  `docker compose build`
+11. Push the built images to Docker registry:
+  `docker compose push`
+12. Deploy the containers using Docker Compose:
+  `docker compose up`
+
+13. Create `explanation.md` file and modify it as the commit messages in the repo will explain.
+
+## 6. Running the Application
+
+To run the current application, follow these steps:
+
+1. Ensure Docker and Docker Compose are installed on your machine.
+2. Clone the repository:
+   ```sh
+   git clone git@github.com:Maubinyaachi/yolo-Microservice.git
+   cd yolo-Microservice
+   ```
+3. Build the Docker images:
+   ```sh
+   docker compose build
+   ```
+4. Start the application:
+   ```sh
+   docker compose up
+   ```
+
+The application will be accessible at:
+- Client: `http://localhost:3000`
+- Backend: `http://localhost:5000`
+- MongoDB: `mongodb://localhost:27017`

@@ -3,7 +3,7 @@
   become: yes
 
   roles:
-    - setup-mongodb
-    - backend-deployment
-    - frontend-deployment
+    - /setup-mongodb/main.yml
+    - /backend-deployment/main.yml
+    - /frontend-deployment/main.yml
     
