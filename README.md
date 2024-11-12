@@ -1,15 +1,13 @@
 # Overview
 This project involved the containerization and deployment of a full-stack yolo application using Docker.
 
+Load balancer ip address 10.49.128.0
 
-# Requirements
-Install the docker engine here:
-- [Docker](https://docs.docker.com/engine/install/) 
+ip address 10.49.128.0
 
-## How to launch the application 
+## Prerequisites
+- Docker
+- Kubernetes
+- Google Cloud SDK
 
 
-![Alt text](image.png)
-
-## How to run the app
-Use vagrant up --provison command
