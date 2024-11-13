@@ -10,5 +10,7 @@ ip address 10.49.128.0
 - Kubernetes
 - Google Cloud SDK
 
+Deploy Containers to artifact Registry
+
 The front end access is 10.49.128.0
 The Backend access is 10.49.128.0:3000
