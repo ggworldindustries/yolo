@@ -10,4 +10,5 @@ ip address 10.49.128.0
 - Kubernetes
 - Google Cloud SDK
 
-
+The front end access is 10.49.128.0
+The Backend access is 10.49.128.0:3000
