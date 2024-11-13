@@ -17,7 +17,10 @@ Deploy Containers to artifact Registry
 Running the deplyments, secrets and services
 
 kubectl apply -f backend-deployment.yaml
+
 kubectl apply -f frontend-deployment.yaml
+
 kubectl apply -f mongodb-deployment.yaml
 
-![Deployments](image-2.png)
+
+![Deployments](image-3.png)
